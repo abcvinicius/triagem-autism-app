@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 🧩 Aplicativo de Triagem e Acompanhamento de Crianças com Autismo
 
 O aplicativo tem como objetivo auxiliar na triagem, acompanhamento e comunicação entre pais e profissionais de saúde envolvidos no desenvolvimento de crianças com Transtorno do Espectro Autista (TEA).
@@ -118,3 +119,6 @@ Data e Hora da Próxima Sessão
 📈 Acompanhamento e Análises
 
 Os médicos têm acesso aos vídeos enviados pelos pais e podem registrar análises e comentários clínicos, contribuindo para o acompanhamento contínuo do desenvolvimento da criança.
+=======
+# triagem-autism-app
+>>>>>>> c2d978bb2cffbbb3da79da3e2983e2a24eb46c61
