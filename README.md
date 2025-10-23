@@ -1,73 +1,120 @@
-# React + TypeScript + Vite
+🧩 Aplicativo de Triagem e Acompanhamento de Crianças com Autismo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O aplicativo tem como objetivo auxiliar na triagem, acompanhamento e comunicação entre pais e profissionais de saúde envolvidos no desenvolvimento de crianças com Transtorno do Espectro Autista (TEA).
 
-Currently, two official plugins are available:
+👤 Acesso ao Sistema
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Na tela inicial, o usuário pode escolher o tipo de conta antes de realizar o Login ou Registro:
 
-## React Compiler
+Paciente (Pais/Responsáveis)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Médico (Profissional de Saúde)
 
-## Expanding the ESLint configuration
+🧒 Funcionalidades para Pais/Responsáveis
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Após o login, o responsável pode cadastrar uma ou mais crianças e preencher informações detalhadas para auxiliar no acompanhamento médico.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🧾 Cadastro da Criança
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Campos obrigatórios:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Nome Completo*
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Data de Nascimento*
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Gênero*
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Foto da Criança
+
+Histórico Médico: informações médicas relevantes (medicamentos, alergias, diagnósticos prévios etc.)
+
+Observações sobre o Desenvolvimento: comportamentos observados, marcos do desenvolvimento e possíveis preocupações.
+
+📋 Questionário de Triagem
+
+Os pais respondem um questionário sobre o comportamento e desenvolvimento da criança, com perguntas que ajudam o médico a realizar uma análise mais precisa.
+
+🎥 Envio de Vídeos para Avaliação Médica
+
+Os responsáveis podem gravar e enviar vídeos da criança em diferentes situações, por exemplo:
+
+“Ana brincando com outras crianças no parque”
+📅 12/01/2025 ⏰ 12:30
+🎞️ Duração: 2 min
+📍 Status: Analisado ou Aguardando Análise
+▶️ Assistir Vídeo
+💬 Análise Médica: Observado contato visual limitado e preferência por brincadeiras solitárias.
+
+🗓️ Sessões e Terapias
+
+Os pais podem visualizar as sessões marcadas pelo médico, contendo as seguintes informações:
+
+Nome da Criança*
+
+Tipo de Terapia*
+
+Nome do Terapeuta*
+
+Data e Hora da Sessão*
+
+Duração (minutos)*
+
+Atividades Realizadas
+
+Observações de Progresso
+
+Avaliação da Sessão
+
+Data e Hora da Próxima Sessão
+
+💬 Comunidade de Pais
+
+Espaço dedicado à troca de experiências entre pais de crianças autistas, permitindo comunicação, dicas e apoio mútuo.
+
+🩺 Funcionalidades para Médicos
+
+Após realizar o login como médico, o profissional pode associar ao seu perfil crianças já cadastradas pelos pais.
+
+👶 Associação de Crianças ao Perfil do Médico
+
+O médico pode visualizar e adicionar crianças disponíveis no sistema.
+Uma vez associada, apenas esse médico poderá realizar acompanhamento e agendar consultas para ela.
+
+Informações disponíveis:
+
+Nome Completo*
+
+Data de Nascimento*
+
+Gênero*
+
+Foto da Criança
+
+Histórico Médico
+
+Observações sobre Desenvolvimento
+
+🗓️ Agendamento de Consultas e Sessões
+
+O médico pode agendar sessões de terapia com crianças vinculadas ao seu perfil.
+Alguns campos são preenchidos automaticamente (como o Nome da Criança), enquanto o médico completa os demais:
+
+Tipo de Terapia*
+
+Nome do Terapeuta*
+
+Data e Hora da Sessão*
+
+Duração (minutos)*
+
+Atividades Realizadas
+
+Observações de Progresso
+
+Avaliação da Sessão
+
+Data e Hora da Próxima Sessão
+
+📈 Acompanhamento e Análises
+
+Os médicos têm acesso aos vídeos enviados pelos pais e podem registrar análises e comentários clínicos, contribuindo para o acompanhamento contínuo do desenvolvimento da criança.
